@@ -159,6 +159,7 @@
             "skipBlankLines": true,
             "skipComments": true
           }
+          
         ]
       }
     }
