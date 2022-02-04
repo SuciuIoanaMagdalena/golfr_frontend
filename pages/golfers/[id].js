@@ -19,7 +19,7 @@ const Profile = () => {
   const [ name, setName ] = useState('')
   const [ message, setMessage ] = useState('')
   const { scores, error } = useUserScores(id)
-  console.log(scores);
+  // console.log(scores);
   useEffect(() => {
     // console.log(scores[0].user_name)
     if (scores.length > 0){
