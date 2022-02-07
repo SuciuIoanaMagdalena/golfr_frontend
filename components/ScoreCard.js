@@ -2,11 +2,12 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import useScoreDelete from '../lib/useScoreDelete'
 import { getUserId } from '../lib/userAuth'
-import { useRouter } from 'next/router'
+
 const CONFIRM_MESSAGE = 'Are you sure you want to delete the score?'
 
 const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
   const { deleteScore } = useScoreDelete(id)
+
   return (
     <div className="flex flex-row p-3 my-4 shadow-md lg:w-1/3 md:w-1/2">
       <div className="w-5/6">
@@ -15,7 +16,7 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
         </div>
         <div>
           <Link href={`golfers/${userId}`}>
-            <a className="underline text-blue-700">{`${userName}`}</a>
+            <a className="underline text-blue-700">{userName}</a>
           </Link>
           {` posted a score of ${totalScore}`}
         </div>
