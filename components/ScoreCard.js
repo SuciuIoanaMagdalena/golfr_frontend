@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 import useScoreDelete from '../lib/useScoreDelete'
 import { getUserId } from '../lib/userAuth'
@@ -14,7 +15,10 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
           {playedAt}
         </div>
         <div>
-          {`${userName} posted a score of ${totalScore}`}
+          <Link href={`golfers/${userId}`}>
+            <a className="underline text-blue-700">{userName}</a>
+          </Link>
+          {` posted a score of ${totalScore}`}
         </div>
       </div>
       <div className="w-1/6">
